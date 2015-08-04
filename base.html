@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block htmltitle %}
+  <title>{{ page_title }}</title>
+  {% endblock %}
+
+  {# CSS #}
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" id="themify-google-fonts-css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed%3A300&amp;subset=latin&amp;ver=4.1.1" type="text/css" media="all">
+  <link rel="stylesheet" href="{{ base_url }}/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="{{ base_url }}/css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="{{ base_url }}/css/highlight.css">
+  {%- for path in extra_css %}
+  <link href="{{ path }}" rel="stylesheet">
+  {%- endfor %}
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="{{ base_url }}/js/highlight.pack.js"></script>
+  <script src="{{ base_url }}/js/theme.js"></script>
+  {%- for path in extra_javascript %}
+  <script src="{{ path }}"></script>
+  {%- endfor %}
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: green; font-weight: 300}
+  </style>
+  {%- block extrahead %} {% endblock %}
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="header_wrapper">
+  <header>
+    <hgroup>
+        <div id="site-logo"><a href="http://www.emlid.com" title="Emlid"><span>Emlid</span></a></div>
+    <nav class="horizontal-menu-wrap">
+      <ul id="horizontal-menu" class="horizontal-menu">
+        <li><a href="http://www.emlid.com">NAVIO+</a></li>
+        <li><a href="http://www.emlid.com/reach">REACH</a></li>
+        <li><a href="http://www.emlid.com/shop">SHOP</a></li>
+        <li><a href="http://www.emlid.com/blog/">BLOG</a></li>
+        <li><a href="http://community.emlid.com/">FORUM</a></li>
+        <li class="current-menu-item"><a href="http://docs.emlid.com">DOCS</a></li>
+        <li><a href="http://emlid.com/subscribe">SUBSCRIBE</a></li>
+      </ul>
+    </nav>
+    </hgroup>
+  </header>
+</div>
+  <div class="wy-grid-for-nav">
+
+    {# SIDE NAV, TOGGLES ON MOBILE #}
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="{{ homepage_url }}" class="icon icon-home"> {{ site_name }}</a>
+        {% include "searchbox.html" %}
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          {% for nav_item in nav %}
+            <li>{% include "toc.html" %}<li>
+          {% endfor %}
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="{{ homepage_url }}">{{ site_name }}</a>
+      </nav>
+
+      {# PAGE CONTENT #}
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          {% include "breadcrumbs.html" %}
+          <div role="main">
+            <div class="section">
+              {% block content %}
+                {{ content }}
+              {% endblock %}
+            </div>
+          </div>
+	  {%- block footer %}
+          {% include "footer.html" %}
+	  {% endblock %}
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+{% include "versions.html" %}
+
+</body>
+</html>
+{% if current_page and current_page.is_homepage %}
+<!--
+MkDocs version : {{ mkdocs_version }}
+Build Date UTC : {{ build_date_utc }}
+-->
+{% endif %}

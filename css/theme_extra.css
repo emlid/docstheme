@@ -1,0 +1,329 @@
+
+/*
+ * Tweak the overal size to better match RTD.
+ */
+body {
+    font-size: 90%;
+}
+
+h3, h4, h5, h6 {
+    color: #2980b9;
+    font-weight: 300
+}
+
+/*
+ * Sphinx doesn't have support for section dividers like we do in
+ * MkDocs, this styles the section titles in the nav
+ *
+ * https://github.com/mkdocs/mkdocs/issues/175
+ */
+.wy-menu-vertical span {
+    line-height: 18px;
+    padding: 0.4045em 1.618em;
+    display: block;
+    position: relative;
+    font-size: 90%;
+    color: #838383;
+}
+
+.wy-menu-vertical {
+  margin-top: 20px;
+}
+
+.wy-menu-vertical .subnav a {
+    padding: 0.4045em 2.427em;
+}
+
+/*
+ * Long navigations run off the bottom of the screen as the nav
+ * area doesn't scroll.
+ *
+ * https://github.com/mkdocs/mkdocs/pull/202
+ */
+.wy-nav-side {
+    height: 100%;
+    padding-bottom: 10px;
+    overflow-y: auto;
+}
+
+/*
+ * readthedocs theme hides nav items when the window height is
+ * too small to contain them.
+ *
+ * https://github.com/mkdocs/mkdocs/issues/#348
+ */
+.wy-menu-vertical ul {
+  margin-bottom: 2em;
+}
+
+/*
+ * Fix wrapping in the code highlighting
+ *
+ * https://github.com/mkdocs/mkdocs/issues/233
+ */
+code {
+    white-space: pre;
+}
+
+/*
+ * Wrap inline code samples otherwise they shoot of the side and
+ * can't be read at all.
+ *
+ * https://github.com/mkdocs/mkdocs/issues/313
+ */
+p code {
+    word-wrap: break-word;
+}
+
+/*
+ * The CSS classes from highlight.js seem to clash with the
+ * ReadTheDocs theme causing some code to be incorrectly made
+ * bold and italic.
+ *
+ * https://github.com/mkdocs/mkdocs/issues/411
+ */
+code.cs, code.c {
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+/*
+ * Fix some issues with the theme and non-highlighted code
+ * samples. Without and highlighting styles attached the
+ * formatting is broken.
+ *
+ * https://github.com/mkdocs/mkdocs/issues/319
+ */
+.no-highlight {
+  display: block;
+  padding: 0.5em;
+  color: #333;
+}
+
+
+/*
+ * Additions specific to the search functionality provided by MkDocs
+ */
+
+#mkdocs-search-results article h3
+{
+    margin-top: 23px;
+    border-top: 1px solid #E1E4E5;
+    padding-top: 24px;
+}
+
+#mkdocs-search-results article:first-child h3 {
+    border-top: none;
+}
+
+#mkdocs-search-query{
+    width: 100%;
+    border-radius: 50px;
+    padding: 6px 12px;
+    border-color: #D1D4D5;
+}
+
+.wy-menu-vertical li ul {
+    display: inherit;
+}
+
+.wy-menu-vertical li ul.subnav ul.subnav{
+    padding-left: 1em;
+}
+
+/*
+*
+* Most changes are here
+*/
+
+/*
+ * Long navigations run off the bottom of the screen as the nav
+ * area doesn't scroll.
+ *
+ * https://github.com/tomchristie/mkdocs/pull/202
+ */
+.wy-nav-side {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/*
+*
+* Searchbox background
+*/
+
+.wy-side-nav-search {
+  position: fixed;
+  height: 40px;
+  width: 300px;
+  background: #FAFAFA;
+}
+
+/*
+*
+* Top box for mobile view
+*/
+
+.wy-nav-top {
+  position: relative;
+  top: 65px;
+  background: #888;
+}
+
+/*
+ * Fix wrapping in the code highlighting
+ *
+ * https://github.com/tomchristie/mkdocs/issues/233
+ */
+
+code {
+    white-space: pre;
+}
+#vertical{
+	padding-bottom: 105px;
+}
+header{
+	/*height: 50px;*/
+	padding: 10px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	height: 65px;
+	overflow: hidden;
+	background-color: rgba(255,255,255,0.8);
+}
+header hgroup{
+	height: 45px;
+	max-width: 94%;
+	width: 1060px;
+	margin: 0 auto;
+}
+nav.stickynav{
+	top:65px;
+	z-index: 5;
+  padding-bottom: 60px;
+}
+.wy-nav-content{
+	margin-top: 65px;
+	background: white;
+}
+#site-logo {
+	margin: 2px 0 0;
+	font-weight: 300;
+	font-size: 1.625em;
+	text-transform: uppercase;
+	float: left;
+}
+#site-logo a {
+font-family: "Roboto Condensed";
+color: #030000;
+font-size: 36px;
+font-weight: normal;
+font-style: normal;
+font-variant: normal;
+text-transform: uppercase;
+text-decoration: none;
+}
+.horizontal-menu {
+margin: 0;
+margin-top: 6px;
+padding: 0;
+padding-right: 125px;
+float: right;
+z-index: 100;
+}
+.horizontal-menu li {
+margin: 0;
+padding: 0;
+list-style: none;
+float: left;
+position: relative;
+}
+.horizontal-menu a {
+font-family: "Roboto Condensed";
+display: block;
+padding: 4px 15px;
+margin: 0 5px 0 0;
+font-size: 16px;
+line-height: 1.5em;
+text-decoration: none;
+color: #000;
+}
+a:hover {
+color: #7f7f7f;
+}
+.current-menu-item a {
+background: #333;
+color: #fff;
+border-radius: 5px;
+}
+.wy-nav-content-wrap{
+	background: white;
+}
+nav.stickynav{
+background: #fafafa;
+}
+nav.stickynav a{
+	color: #333;
+}
+nav.stickynav a:hover{
+	background-color: transparent;
+}
+.wy-menu-vertical li.current a{
+	background: #f2f1f0;
+	color: #333;
+	border-right: none;
+}
+.wy-menu-vertical li.current a:hover{
+	background: #f2f1f0;
+}
+.wy-menu-vertical li.current>a{
+	background: #fafafa;
+}
+nav.stickynav a:hover, .wy-menu-vertical li.on a, .wy-menu-vertical li.current>a{
+	color: #008cff;
+}
+.rst-versions{
+	border-top: solid 1px #c9c9c9;
+}
+.rst-versions .rst-current-version{
+		background-color: rgb(250, 250, 250);
+}
+.rst-versions .rst-current-version span a{
+	color: #333;
+}
+@media screen and (max-width:768px){
+	.horizontal-menu-wrap{
+		display: none;
+	}
+}
+
+/*
+* Killing home icon
+* Putting searchbox in the middle of its block
+*/
+
+.icon-home{
+  visibility: hidden;
+}
+
+.wy-form{
+  position: relative;
+  top: -39px;
+}
+
+/*
+*
+* Disabling lvl 3 navigation, scroll does not work
+*/
+/*.toctree-l3{
+  display: none;
+}*/
+
+/*
+*
+* Background header
+*/
+.wy-body-for-nav{
+  background: #FFF;
+}
