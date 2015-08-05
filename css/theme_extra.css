@@ -214,6 +214,7 @@ nav.stickynav{
 	font-size: 1.625em;
 	text-transform: uppercase;
 	float: left;
+  width: 120px;
 }
 #site-logo a {
 font-family: "Roboto Condensed";
