@@ -156,7 +156,7 @@ code.cs, code.c {
 .wy-side-nav-search {
   position: fixed;
   height: 40px;
-  width: 300px;
+  width: inherit;
   background: #FAFAFA;
 }
 
@@ -274,7 +274,7 @@ nav.stickynav a:hover{
 .wy-menu-vertical li.current a{
 	background: #f2f1f0;
 	color: #333;
-	border-right: none;
+  border: none;
 }
 .wy-menu-vertical li.current a:hover{
 	background: #f2f1f0;
