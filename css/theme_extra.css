@@ -321,3 +321,16 @@ nav.stickynav a:hover, .wy-menu-vertical li.on a, .wy-menu-vertical li.current>a
 .wy-body-for-nav{
   background: #FFF;
 }
+
+/*
+* Fixed blockquote style:
+* Now they look like markdown blockquotes
+*/
+
+blockquote {
+ color: rgb(119, 119, 119);
+ padding: 0 15px;
+ color: #777;
+ border-left: 4px solid #ddd;
+}
+
