@@ -334,3 +334,16 @@ blockquote {
  border-left: 4px solid #ddd;
 }
 
+/*
+* Make all links bold
+* Improves readability, especially in blockquotes
+* Make visited links brighter inside blockquotes
+*/
+
+.rst-content a {
+ font-weight: bold;
+}
+
+blockquote a:visited {
+ color: #AB69C6;
+}
