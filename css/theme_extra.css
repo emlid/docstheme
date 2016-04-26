@@ -160,6 +160,20 @@ code.cs, code.c {
   background: #FAFAFA;
 }
 
+/*.wy-side-nav-search div[role=search]{
+position:fixed;
+top:70px;
+}*/
+
+.wy-side-nav-search div[role=search] .wy-form{
+top:0;
+}
+
+.wy-menu-vertical{
+margin-top: 40px;
+}
+
+
 /*
 *
 * Top box for mobile view
@@ -306,7 +320,7 @@ nav.stickynav a:hover, .wy-menu-vertical li.on a, .wy-menu-vertical li.current>a
 */
 
 .icon-home{
-  visibility: hidden;
+  display: none !important;
 }
 
 .wy-form{
